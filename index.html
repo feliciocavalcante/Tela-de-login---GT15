@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Plataforma Educacional</title>
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <style>
+  </style>
+</head>
+<body data-theme="dark" class="min-h-screen bg-base-200 flex items-center justify-center p-4">
+  <main class="w-full max-w-md">
+    <div class="bg-base-100 rounded-lg shadow-xl p-8 fade-in">
+      <div class="text-center mb-6">
+        <h1 class="text-3xl font-bold text-primary">Bem-vindo(a)</h1>
+        <p class="text-base-content/70 mt-2">Portal de Aprendizagem Digital</p>
+        <div class="badge badge-accent mt-3">Ambiente Educacional</div>
+      </div>
+      
+      <div class="alert alert-info mb-6 text-sm" role="status">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" class="stroke-current shrink-0 w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+        <span>Acesse com sua conta institucional ou credenciais da plataforma</span>
+      </div>
+      
+      <form id="loginForm" novalidate>
+        <div class="form-control w-full mb-4">
+          <label for="email" class="label">
+            <span class="label-text">Email</span>
+            <span class="label-text-alt tooltip-custom" tabindex="0">
+              <i class="fas fa-question-circle"></i>
+              <span class="tooltip-text">Use seu email institucional fornecido pela escola ou universidade</span>
+            </span>
+          </label>
+          <div class="relative">
+            <input 
+              type="email" 
+              id="email" 
+              name="email"
+              placeholder="seu@email.com" 
+              class="input input-bordered w-full pr-10" 
+              aria-label="Digite seu email institucional"
+              aria-required="true"
+              required
+              pattern="[^@\s]+@[^@\s]+\.[^@\s]+"
+              title="Por favor, insira um email válido"
+            />
+            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+              <i class="fas fa-envelope text-base-content/50"></i>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-control w-full mb-2">
+          <label for="password" class="label">
+            <span class="label-text">Senha</span>
+            <span class="label-text-alt tooltip-custom" tabindex="0">
+              <i class="fas fa-question-circle"></i>
+              <span class="tooltip-text">Sua senha deve ter pelo menos 8 caracteres, incluindo letras e números</span>
+            </span>
+          </label>
+          <div class="relative">
+            <input 
+              type="password" 
+              id="password" 
+              name="password"
+              placeholder="••••••••" 
+              class="input input-bordered w-full pr-10" 
+              aria-label="Digite sua senha"
+              aria-required="true"
+              aria-describedby="passwordRequirements"
+              required
+              minlength="8"
+              pattern="(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}"
+              title="Sua senha deve ter pelo menos 8 caracteres, incluindo pelo menos uma letra e um número"
+            />
+            <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+              <i class="fas fa-lock text-base-content/50"></i>
+            </div>
+          </div>
+          
+          <ul id="passwordRequirements" class="password-requirements text-base-content/70 pl-2 mt-2" aria-live="polite">
+            <li>Pelo menos 8 caracteres</li>
+            <li>Pelo menos uma letra</li>
+            <li>Pelo menos um número</li>
+          </ul>
+        </div>
+        
+        <div class="flex items-center justify-between mb-6">
+          <div class="form-control">
+            <label class="label cursor-pointer gap-2">
+              <input type="checkbox" id="remember" name="remember" class="checkbox checkbox-sm checkbox-primary" aria-label="Lembrar minhas credenciais neste dispositivo" />
+              <span class="label-text">Lembrar-me</span>
+            </label>
+          </div>
+          
+          <a href="#" class="text-sm text-primary hover:text-primary-focus transition-colors">
+            Esqueceu a senha?
+          </a>
+        </div>
+        
+        <button 
+          type="submit" 
+          class="btn btn-primary w-full text-primary-content hover:opacity-90 active:scale-95 transition-all"
+          aria-label="Fazer login na plataforma educacional"
+        >
+          <i class="fas fa-sign-in-alt mr-2"></i> Entrar
+        </button>
+        
+        <div class="divider my-6">ou continue com</div>
+        
+        <div class="grid grid-cols-2 gap-4 mb-6">
+          <button 
+            type="button" 
+            class="btn btn-outline gap-2"
+            aria-label="Entrar com Google Classroom"
+          >
+            <i class="fab fa-google"></i> Google
+          </button>
+          <button 
+            type="button" 
+            class="btn btn-outline gap-2"
+            aria-label="Entrar com Microsoft Education"
+          >
+            <i class="fab fa-microsoft"></i> Microsoft
+          </button>
+        </div>
+        
+        <div class="text-center">
+          <p class="text-base-content/70">
+            Não tem uma conta? 
+            <a href="#" class="text-primary hover:text-primary-focus transition-colors">
+              Cadastre-se
+            </a>
+          </p>
+        </div>
+      </form>
+    </div>
+    
+    <footer class="mt-8 text-center text-sm text-base-content/50">
+      <p>© 2024 Plataforma Educacional. Todos os direitos reservados.</p>
+      <div class="mt-2">
+        <a href="#" class="link link-hover mx-2">Termos de Uso</a>
+        <a href="#" class="link link-hover mx-2">Privacidade</a>
+        <a href="#" class="link link-hover mx-2">Acessibilidade</a>
+      </div>
+    </footer>
+  </main>
+</body>
+</html>

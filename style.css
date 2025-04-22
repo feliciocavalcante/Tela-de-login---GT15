@@ -1,0 +1,70 @@
+@media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  .tooltip-custom {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip-custom .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: hsl(var(--b2));
+    color: hsl(var(--bc));
+    text-align: left;
+    border-radius: 6px;
+    padding: 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    font-size: 0.875rem;
+    border: 1px solid hsl(var(--b3));
+  }
+  
+  .tooltip-custom:hover .tooltip-text,
+  .tooltip-custom:focus .tooltip-text,
+  input:focus + .tooltip-custom .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .password-requirements {
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+  }
+  
+  .password-requirements li {
+    margin-bottom: 0.25rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .password-requirements li::before {
+    content: "";
+    display: inline-block;
+    width: 0.5rem;
+    height: 0.5rem;
+    border-radius: 50%;
+    background-color: hsl(var(--n));
+    margin-right: 0.5rem;
+  }
+  
+  .fade-in {
+    animation: fadeIn 0.3s ease-in;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
